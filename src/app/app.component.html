@@ -1,0 +1,25 @@
+<h3>Users Creation</h3>
+
+<form class="example-form" [formGroup]="userForm">
+	<div class="primary-container">
+    <input matInput placeholder="First Name" value="" formControlName="firstName">
+    <input matInput placeholder="Last Name" value="" formControlName="lastName">
+	</div>
+	<div class="address-container" *ngFor="let group of addressArray.controls; let i = index;" [formGroupName]="i">
+		<div>
+			<input matInput placeholder="Street" value="" formControlName="street"> 
+      <input matInput placeholder="City" value="" formControlName="city">
+      <input matInput placeholder="State" value="" formControlName="state">
+    </div>
+    <div>
+      <div>
+        <input matInput placeholder="Contact Person" value="" formControlName="contactPerson">
+        <input matInput placeholder="Phone Number" value="" formControlName="phoneNumber">
+      </div>
+      <button mat-raised-button (click)="addContact()">Add more Contacts</button>
+    </div>
+  </div>
+  <div class="form-row org-desc-parent-margin">
+    <button mat-raised-button (click)="addAddress()">Add more address</button>
+  </div>
+</form>
